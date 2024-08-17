@@ -40,20 +40,18 @@ function QuestionList() {
   }
   
 
-  const questionItems = questions.map((q) => (
+  return (
+    <section>
+      <h1>Quiz Questions</h1>
+      <ul>{/* display QuestionItem components here after fetching */}
+        {questions.map((q) => (
     <QuestionItem
       key={q.id}
       question={q}
       onDeleteClick={handleDeleteClick}
       onAnswerChange={handleAnswerChange}
     />
-  ));
-
-  return (
-    <section>
-      <h1>Quiz Questions</h1>
-      <ul>{/* display QuestionItem components here after fetching */}
-        {questionItems}
+  ))}
       </ul>
     </section>
   );
